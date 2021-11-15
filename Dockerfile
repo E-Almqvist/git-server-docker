@@ -22,7 +22,7 @@ WORKDIR /git-server/
 # -s flag changes user's shell
 RUN mkdir /git-server/keys \
   && adduser -D -s /usr/bin/git-shell git \
-  && echo git:12345 | chpasswd \
+  && echo git:ZnVjayB5b3UgZ2V0IG91dCBvZiBteSBjb250YWluZXIgPDMK | chpasswd \
   && mkdir /home/git/.ssh
 
 # This is a login shell for SSH accounts to provide restricted Git access.
@@ -35,6 +35,9 @@ COPY git-shell-commands /home/git/git-shell-commands
 # sshd_config file is edited for enable access key and disable access password
 COPY sshd_config /etc/ssh/sshd_config
 COPY start.sh start.sh
+
+# Remove ugly motd
+RUN echo "" > /etc/motd
 
 EXPOSE 22
 

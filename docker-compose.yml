@@ -5,13 +5,13 @@ services:
   git-server:
     image: jkarlos/git-server-docker
     #build: .
-    enviroment:
-      - SERVER_NAME="Git Server"
     restart: always
     container_name: git-server
     ports:
       - "2222:22"
     volumes:
-    - /srv/git/keys:/git-server/keys
-    - /srv/git/repos:/git-server/repos
+      - /srv/git/keys:/git-server/keys
+      - /srv/git/repos:/git-server/repos
+    enviroment:
+      - SERVER_NAME: "Git Server"
 

@@ -1,4 +1,4 @@
-version: '2'
+version: '2-wych'
 
 services:
 
@@ -10,6 +10,6 @@ services:
     ports:
       - "2222:22"
     volumes:
-    - ~/git-server/keys:/git-server/keys
-    - ~/git-server/repos:/git-server/repos
+    - /srv/git/keys:/git-server/keys
+    - /srv/git/repos:/git-server/repos
 

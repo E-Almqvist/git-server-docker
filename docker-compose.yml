@@ -10,5 +10,5 @@ services:
     ports:
       - "2222:22"
     volumes:
-      - /srv/git/keys:/git/keys
+      - /srv/git/keys:/git-server/keys
       - /srv/git/repos:/repos

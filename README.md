@@ -7,7 +7,7 @@ A lightweight Git Server Docker image built with Alpine Linux. Available on [Git
 
 How to run the container in port 2222 with two volumes: keys volume for public keys and repos volume for git repositories:
 
-	$ docker run -d -p 2222:22 -v ~/git-server/keys:/git-server/keys -v ~/git-server/repos:/git-server/repos jkarlos/git-server-docker
+	$ docker run -d -e SERVER_NAME="MyGitServer" -p 2222:22 -v ~/git-server/keys:/git-server/keys -v ~/git-server/repos:/git-server/repos jkarlos/git-server-docker
 
 How to use a public key:
 

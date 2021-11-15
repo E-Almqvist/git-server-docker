@@ -12,6 +12,3 @@ services:
     volumes:
       - /srv/git/keys:/git-server/keys
       - /srv/git/repos:/git-server/repos
-    enviroment:
-      - SERVER_NAME: "Git Server"
-
